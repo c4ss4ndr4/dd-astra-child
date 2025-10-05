@@ -10,74 +10,25 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-/**
- * Enqueue parent theme styles
- */
-function dd_daydream_enqueue_styles() {
-    // Enqueue parent theme style
-    wp_enqueue_style( 'astra-parent-style', get_template_directory_uri() . '/style.css' );
-    
-    // Enqueue child theme style
-    wp_enqueue_style( 'dd-astra-child-style', 
-        get_stylesheet_directory_uri() . '/style.css',
-        array( 'astra-parent-style' ),
-        wp_get_theme()->get( 'Version' )
-    );
-}
-add_action( 'wp_enqueue_scripts', 'dd_daydream_enqueue_styles' );
+// Enqueue child theme styles
+add_action( 'wp_enqueue_scripts', function () {
+	wp_enqueue_style( 'astra-child', get_stylesheet_uri(), array( 'astra-theme-css' ), '1.0' );
+});
 
-/**
- * Add Daydream Project custom colors to Gutenberg editor
- */
-function dd_daydream_gutenberg_colors() {
-    add_theme_support( 'editor-color-palette', array(
-        array(
-            'name'  => __( 'Daydream Blue', 'dd-astra-child' ),
-            'slug'  => 'daydream-blue',
-            'color' => '#00A0DF',
-        ),
-        array(
-            'name'  => __( 'Daydream Dark Blue', 'dd-astra-child' ),
-            'slug'  => 'daydream-dark-blue',
-            'color' => '#0074A3',
-        ),
-        array(
-            'name'  => __( 'Daydream Magenta', 'dd-astra-child' ),
-            'slug'  => 'daydream-magenta',
-            'color' => '#EF4DAE',
-        ),
-        array(
-            'name'  => __( 'Daydream Heading', 'dd-astra-child' ),
-            'slug'  => 'daydream-heading',
-            'color' => '#1A1A1A',
-        ),
-        array(
-            'name'  => __( 'Daydream Text', 'dd-astra-child' ),
-            'slug'  => 'daydream-text',
-            'color' => '#333333',
-        ),
-        array(
-            'name'  => __( 'Daydream Secondary', 'dd-astra-child' ),
-            'slug'  => 'daydream-secondary',
-            'color' => '#5E6A71',
-        ),
-        array(
-            'name'  => __( 'Daydream Border', 'dd-astra-child' ),
-            'slug'  => 'daydream-border',
-            'color' => '#E2E8F0',
-        ),
-        array(
-            'name'  => __( 'Daydream Background', 'dd-astra-child' ),
-            'slug'  => 'daydream-bg',
-            'color' => '#F7FAFC',
-        ),
-    ) );
-    
-    // Also add theme support for editor styles
-    add_theme_support( 'editor-styles' );
-    add_editor_style( 'style.css' );
-}
-add_action( 'after_setup_theme', 'dd_daydream_gutenberg_colors', 20 );
+// Gutenberg editor palette
+add_action( 'after_setup_theme', function () {
+	add_theme_support( 'editor-color-palette', array(
+		array( 'name' => 'Brand',       'slug' => 'brand',       'color' => '#00A0DF' ),
+		array( 'name' => 'Alt Brand',   'slug' => 'alt-brand',   'color' => '#EF4DAE' ),
+		array( 'name' => 'Heading',     'slug' => 'heading',     'color' => '#1A1A1A' ),
+		array( 'name' => 'Text',        'slug' => 'text',        'color' => '#333333' ),
+		array( 'name' => 'Primary',     'slug' => 'primary',     'color' => '#0074A3' ),
+		array( 'name' => 'Secondary',   'slug' => 'secondary',   'color' => '#5E6A71' ),
+		array( 'name' => 'Border',      'slug' => 'border',      'color' => '#E2E8F0' ),
+		array( 'name' => 'Subtle BG',   'slug' => 'subtle-bg',   'color' => '#F7FAFC' ),
+		array( 'name' => 'Extra',       'slug' => 'extra',       'color' => '#0E1A20' ),
+	) );
+} );
 
 /**
  * Add Daydream Project CSS Variables
@@ -87,15 +38,15 @@ function dd_daydream_css_variables() {
     <style type="text/css">
         :root {
             /* Daydream Project Brand Colors */
-            --daydream-blue: #00A0DF;
-            --daydream-dark-blue: #0074A3;
-            --daydream-magenta: #EF4DAE;
-            --daydream-heading: #1A1A1A;
-            --daydream-text: #333333;
-            --daydream-secondary: #5E6A71;
-            --daydream-border: #E2E8F0;
-            --daydream-bg: #F7FAFC;
-            --daydream-extra: #0E1A20;
+            --brand: #00A0DF;
+            --alt-brand: #EF4DAE;
+            --heading: #1A1A1A;
+            --text: #333333;
+            --primary: #0074A3;
+            --secondary: #5E6A71;
+            --border: #E2E8F0;
+            --subtle-bg: #F7FAFC;
+            --extra: #0E1A20;
         }
     </style>
     <?php

@@ -4,44 +4,49 @@
     "color": {
       "palette": [
         {
-          "name": "Daydream Blue",
-          "slug": "daydream-blue",
+          "name": "Brand",
+          "slug": "brand",
           "color": "#00A0DF"
         },
         {
-          "name": "Daydream Dark Blue",
-          "slug": "daydream-dark-blue",
-          "color": "#0074A3"
-        },
-        {
-          "name": "Daydream Magenta",
-          "slug": "daydream-magenta",
+          "name": "Alt Brand",
+          "slug": "alt-brand",
           "color": "#EF4DAE"
         },
         {
-          "name": "Daydream Heading",
-          "slug": "daydream-heading",
+          "name": "Heading",
+          "slug": "heading",
           "color": "#1A1A1A"
         },
         {
-          "name": "Daydream Text",
-          "slug": "daydream-text",
+          "name": "Text",
+          "slug": "text",
           "color": "#333333"
         },
         {
-          "name": "Daydream Secondary",
-          "slug": "daydream-secondary",
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#0074A3"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
           "color": "#5E6A71"
         },
         {
-          "name": "Daydream Border",
-          "slug": "daydream-border",
+          "name": "Border",
+          "slug": "border",
           "color": "#E2E8F0"
         },
         {
-          "name": "Daydream Background",
-          "slug": "daydream-bg",
+          "name": "Subtle BG",
+          "slug": "subtle-bg",
           "color": "#F7FAFC"
+        },
+        {
+          "name": "Extra",
+          "slug": "extra",
+          "color": "#0E1A20"
         }
       ]
     },
