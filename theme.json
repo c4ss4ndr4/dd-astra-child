@@ -1,6 +1,50 @@
 {
   "version": 2,
   "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Daydream Blue",
+          "slug": "daydream-blue",
+          "color": "#00A0DF"
+        },
+        {
+          "name": "Daydream Dark Blue",
+          "slug": "daydream-dark-blue",
+          "color": "#0074A3"
+        },
+        {
+          "name": "Daydream Magenta",
+          "slug": "daydream-magenta",
+          "color": "#EF4DAE"
+        },
+        {
+          "name": "Daydream Heading",
+          "slug": "daydream-heading",
+          "color": "#1A1A1A"
+        },
+        {
+          "name": "Daydream Text",
+          "slug": "daydream-text",
+          "color": "#333333"
+        },
+        {
+          "name": "Daydream Secondary",
+          "slug": "daydream-secondary",
+          "color": "#5E6A71"
+        },
+        {
+          "name": "Daydream Border",
+          "slug": "daydream-border",
+          "color": "#E2E8F0"
+        },
+        {
+          "name": "Daydream Background",
+          "slug": "daydream-bg",
+          "color": "#F7FAFC"
+        }
+      ]
+    },
     "appearanceTools": true,
     "spacing": {
       "blockGap": true,

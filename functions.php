@@ -72,8 +72,12 @@ function dd_daydream_gutenberg_colors() {
             'color' => '#F7FAFC',
         ),
     ) );
+    
+    // Also add theme support for editor styles
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'style.css' );
 }
-add_action( 'after_setup_theme', 'dd_daydream_gutenberg_colors' );
+add_action( 'after_setup_theme', 'dd_daydream_gutenberg_colors', 20 );
 
 /**
  * Add Daydream Project CSS Variables
