@@ -5,15 +5,15 @@
       "custom": true,
       "defaultPalette": false,
       "palette": [
-        { "slug": "brand", "color": "#00A0DF", "name": "Brand" },
-        { "slug": "alt-brand", "color": "#EF4DAE", "name": "Alt Brand" },
-        { "slug": "heading", "color": "#1A1A1A", "name": "Heading" },
-        { "slug": "text", "color": "#333333", "name": "Text" },
-        { "slug": "primary", "color": "#0074A3", "name": "Primary" },
-        { "slug": "secondary", "color": "#5E6A71", "name": "Secondary" },
-        { "slug": "border", "color": "#E2E8F0", "name": "Border" },
-        { "slug": "subtle-bg", "color": "#F7FAFC", "name": "Subtle BG" },
-        { "slug": "extra", "color": "#0E1A20", "name": "Extra" }
+        { "slug": "brand", "name": "Brand", "color": "#00A0DF" },
+        { "slug": "alt-brand", "name": "Alt Brand", "color": "#EF4DAE" },
+        { "slug": "heading", "name": "Heading", "color": "#1A1A1A" },
+        { "slug": "text", "name": "Text", "color": "#333333" },
+        { "slug": "primary", "name": "Primary", "color": "#0074A3" },
+        { "slug": "secondary", "name": "Secondary", "color": "#5E6A71" },
+        { "slug": "border", "name": "Border", "color": "#E2E8F0" },
+        { "slug": "subtle-bg", "name": "Subtle BG", "color": "#F7FAFC" },
+        { "slug": "extra", "name": "Extra", "color": "#0E1A20" }
       ]
     }
   }

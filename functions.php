@@ -15,8 +15,19 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'astra-child', get_stylesheet_uri(), array( 'astra-theme-css' ), '1.0' );
 });
 
-// Gutenberg editor palette
+// wp-content/themes/astra-child/functions.php
+
+// Only run this if we're NOT a block (FSE) theme.
+// If you later move to FSE + theme.json, this quietly steps aside.
 add_action( 'after_setup_theme', function () {
+	if ( function_exists('wp_is_block_theme') && wp_is_block_theme() ) {
+		return; // theme.json will handle palette in FSE
+	}
+
+	// Clear whatever the parent registered
+	remove_theme_support( 'editor-color-palette' );
+
+	// Your palette
 	add_theme_support( 'editor-color-palette', array(
 		array( 'name' => 'Brand',       'slug' => 'brand',       'color' => '#00A0DF' ),
 		array( 'name' => 'Alt Brand',   'slug' => 'alt-brand',   'color' => '#EF4DAE' ),
@@ -28,7 +39,7 @@ add_action( 'after_setup_theme', function () {
 		array( 'name' => 'Subtle BG',   'slug' => 'subtle-bg',   'color' => '#F7FAFC' ),
 		array( 'name' => 'Extra',       'slug' => 'extra',       'color' => '#0E1A20' ),
 	) );
-} );
+}, 20 ); // priority matters
 
 /**
  * Add Daydream Project CSS Variables
